@@ -7,6 +7,10 @@ class OperationsController extends Controller
     // addition
 
     // subtraction
+    public function subtraction($a, $b): float
+    {
+        return (float) ($a - $b);
+    }
 
     public function multiplication($a, $b): float
     {

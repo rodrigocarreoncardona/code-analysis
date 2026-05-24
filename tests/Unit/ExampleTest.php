@@ -18,6 +18,16 @@ class ExampleTest extends TestCase
     // addition
 
     // subtraction
+    public function test_subtraction(): void
+    {
+        $controller = new OperationsController;
+        $result = $controller->subtraction(10, 4);
+
+        $this->assertIsFloat($result);
+        $this->assertEquals(6, $result);
+        $this->assertNotNull($result);
+    }
+    // multiplication
 
     public function test_multiplication(): void
     {
