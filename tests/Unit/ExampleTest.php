@@ -40,6 +40,17 @@ class ExampleTest extends TestCase
         $this->assertGreaterThan(0, $result);
     }
 
+    // percentage
+    public function test_percentage(): void
+    {
+        $controller = new OperationsController;
+        $result = $controller->percentage(200, 15);
+
+        $this->assertIsFloat($result);
+        $this->assertEquals(30, $result);
+        $this->assertNotNull($result);
+        $this->assertGreaterThan(0, $result);
+    }
     // division
 
     // square

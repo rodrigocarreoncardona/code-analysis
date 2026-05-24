@@ -17,6 +17,11 @@ class OperationsController extends Controller
         return $a * $b;
     }
 
+    // percentage
+    public function percentage(float $total, float $percent): float
+    {
+        return ($total * $percent) / 100;
+    }
     // division
 
     // square
