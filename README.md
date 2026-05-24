@@ -14,9 +14,9 @@ cd code-analysis
 composer install
 ```
 
-**3.- Cambiar a rama develop**
+**3.- Crear rama personal**
 ```bash
-git switch develop
+git checkout -b [*su_nombre*]
 ```
 
 **4.- Ejecucion**
@@ -88,7 +88,7 @@ Ya con todo listo, será posible llevar los cambios hacia el repositorio
 ```bash
 git add .
 git commit -m "[cambios realizados]"
-git push origin develop
+git push origin [*su_nombre*]
 ```
 
-Y realizar el pull request necesario para llevar los cambios a la rama main y esto a producción
+Y realizar el pull request necesario para llevar los cambios a la rama develop
