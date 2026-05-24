@@ -19,7 +19,16 @@ class ExampleTest extends TestCase
 
     // subtraction
 
-    // multiplication
+    public function test_multiplication(): void
+    {
+        $controller = new OperationsController;
+        $result = $controller->multiplication(3, 4);
+
+        $this->assertIsFloat($result);
+        $this->assertEquals(12, $result);
+        $this->assertNotNull($result);
+        $this->assertGreaterThan(0, $result);
+    }
 
     // division
 
