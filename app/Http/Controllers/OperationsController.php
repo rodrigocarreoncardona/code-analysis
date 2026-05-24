@@ -24,4 +24,21 @@ class OperationsController extends Controller
     }
 
     // factorial
+    public function factorial(int $n): int
+    {
+        if ($n < 0) {
+            throw new \InvalidArgumentException('Factorial is not defined for negative numbers.');
+        }
+
+        if ($n === 0 || $n === 1) {
+            return 1;
+        }
+
+        $result = 1;
+        for ($i = 2; $i <= $n; $i++) {
+            $result *= $i;
+        }
+
+        return $result;
+    }
 }

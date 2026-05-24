@@ -47,4 +47,31 @@ class ExampleTest extends TestCase
     }
 
     // factorial
+    public function test_factorial(): void
+    {
+        $controller = new OperationsController;
+        $result = $controller->factorial(5);
+
+        $this->assertIsInt($result);
+        $this->assertEquals(120, $result);
+        $this->assertNotNull($result);
+        $this->assertGreaterThan(0, $result);
+    }
+
+    public function test_factorial_zero(): void
+    {
+        $controller = new OperationsController;
+        $result = $controller->factorial(0);
+
+        $this->assertIsInt($result);
+        $this->assertEquals(1, $result);
+    }
+
+    public function test_factorial_negative_throws_exception(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $controller = new OperationsController;
+        $controller->factorial(-1);
+    }
 }
