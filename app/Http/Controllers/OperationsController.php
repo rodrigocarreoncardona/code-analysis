@@ -8,7 +8,10 @@ class OperationsController extends Controller
 
     // subtraction
 
-    // multiplication
+    public function multiplication($a, $b): float
+    {
+        return $a * $b;
+    }
 
     // division
 
