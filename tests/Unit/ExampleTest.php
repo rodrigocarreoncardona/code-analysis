@@ -27,6 +27,7 @@ class ExampleTest extends TestCase
         $this->assertEquals(6, $result);
         $this->assertNotNull($result);
     }
+     // multiplication
 
     public function test_multiplication(): void
     {
