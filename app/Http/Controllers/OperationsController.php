@@ -6,7 +6,7 @@ class OperationsController extends Controller
 {
     // addition
 
-     // subtraction
+    // subtraction
     public function subtraction($a, $b): float
     {
         return (float) ($a - $b);
@@ -17,11 +17,6 @@ class OperationsController extends Controller
         return $a * $b;
     }
 
-    // percentage
-    public function percentage(float $total, float $percent): float
-    {
-        return ($total * $percent) / 100;
-    }
     // division
 
     // square
