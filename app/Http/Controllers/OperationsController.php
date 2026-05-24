@@ -16,6 +16,10 @@ class OperationsController extends Controller
     // division
 
     // square
+    public function square($a): float
+    {
+        return $a ** 2;
+    }
 
     // square root
     public function squareRoot($a): float
