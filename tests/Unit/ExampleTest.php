@@ -17,6 +17,17 @@ class ExampleTest extends TestCase
 
     // addition
 
+    public function test_addition(): void
+    {
+        $controller = new OperationsController;
+        $result = $controller->addition(5, 3);
+
+        $this->assertIsNumeric($result);
+        $this->assertEquals(8, $result);
+        $this->assertNotNull($result);
+        $this->assertGreaterThan(0, $result);
+    }
+
     // subtraction
 
     public function test_multiplication(): void

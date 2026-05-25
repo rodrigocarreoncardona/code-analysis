@@ -6,6 +6,11 @@ class OperationsController extends Controller
 {
     // addition
 
+    public function addition($a, $b): int|float
+    {
+        return $a + $b;
+    }
+
     // subtraction
 
     public function multiplication($a, $b): float
