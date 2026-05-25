@@ -6,16 +6,34 @@ class OperationsController extends Controller
 {
     // addition
 
+    public function addition($a, $b): int|float
+    {
+        return $a + $b;
+    }
+
     // subtraction
+    public function subtraction($a, $b): float
+    {
+        return (float) ($a - $b);
+    }
 
     public function multiplication($a, $b): float
     {
         return $a * $b;
     }
 
+    // percentage
+    public function percentage(float $total, float $percent): float
+    {
+        return ($total * $percent) / 100;
+    }
     // division
 
     // square
+    public function square($a): float
+    {
+        return $a ** 2;
+    }
 
     // square root
     public function squareRoot($a): float
@@ -24,4 +42,21 @@ class OperationsController extends Controller
     }
 
     // factorial
+    public function factorial(int $n): int
+    {
+        if ($n < 0) {
+            throw new \InvalidArgumentException('Factorial is not defined for negative numbers.');
+        }
+
+        if ($n === 0 || $n === 1) {
+            return 1;
+        }
+
+        $result = 1;
+        for ($i = 2; $i <= $n; $i++) {
+            $result *= $i;
+        }
+
+        return $result;
+    }
 }

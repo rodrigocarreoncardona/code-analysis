@@ -17,7 +17,28 @@ class ExampleTest extends TestCase
 
     // addition
 
+    public function test_addition(): void
+    {
+        $controller = new OperationsController;
+        $result = $controller->addition(5, 3);
+
+        $this->assertIsNumeric($result);
+        $this->assertEquals(8, $result);
+        $this->assertNotNull($result);
+        $this->assertGreaterThan(0, $result);
+    }
+
     // subtraction
+    public function test_subtraction(): void
+    {
+        $controller = new OperationsController;
+        $result = $controller->subtraction(10, 4);
+
+        $this->assertIsFloat($result);
+        $this->assertEquals(6, $result);
+        $this->assertNotNull($result);
+    }
+    // multiplication
 
     public function test_multiplication(): void
     {
@@ -30,9 +51,58 @@ class ExampleTest extends TestCase
         $this->assertGreaterThan(0, $result);
     }
 
+    // percentage
+    public function test_percentage(): void
+    {
+        $controller = new OperationsController;
+        $result = $controller->percentage(200, 15);
+
+        $this->assertIsFloat($result);
+        $this->assertEquals(30, $result);
+        $this->assertNotNull($result);
+        $this->assertGreaterThan(0, $result);
+    }
     // division
 
     // square
+    // square
+    public function test_square(): void
+    {
+        $controller = new OperationsController;
+
+        // 1. Caso normal (Mayor a cero)
+        $result1 = $controller->square(5);
+
+        $this->assertIsFloat($result1);
+        $this->assertEquals(25, $result1);
+        $this->assertNotNull($result1);
+        $this->assertGreaterThan(0, $result1);
+
+        // 2. Decimal encogido
+        $result2 = $controller->square(0.5);
+
+        $this->assertIsFloat($result2);
+        $this->assertEquals(0.25, $result2);
+        $this->assertNotNull($result2);
+        $this->assertLessThan(0.5, $result2);
+
+        // 3. Texto numérico
+        $result3 = $controller->square('6');
+
+        $this->assertIsFloat($result3);
+        $this->assertEquals(36, $result3);
+        $this->assertNotNull($result3);
+        $this->assertGreaterThan(0, $result3);
+
+        // 4. Prueba inversa
+        $cuadrado = $controller->square(4);
+        $result4 = $controller->squareRoot($cuadrado);
+
+        $this->assertIsFloat($result4);
+        $this->assertEquals(4, $result4);
+        $this->assertNotNull($result4);
+        $this->assertGreaterThan(0, $result4);
+    }
 
     // square root
     public function test_root_square(): void
@@ -47,4 +117,31 @@ class ExampleTest extends TestCase
     }
 
     // factorial
+    public function test_factorial(): void
+    {
+        $controller = new OperationsController;
+        $result = $controller->factorial(5);
+
+        $this->assertIsInt($result);
+        $this->assertEquals(120, $result);
+        $this->assertNotNull($result);
+        $this->assertGreaterThan(0, $result);
+    }
+
+    public function test_factorial_zero(): void
+    {
+        $controller = new OperationsController;
+        $result = $controller->factorial(0);
+
+        $this->assertIsInt($result);
+        $this->assertEquals(1, $result);
+    }
+
+    public function test_factorial_negative_throws_exception(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $controller = new OperationsController;
+        $controller->factorial(-1);
+    }
 }
