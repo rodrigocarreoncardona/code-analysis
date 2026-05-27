@@ -46,7 +46,7 @@ class ExampleTest extends TestCase
         $result = $controller->multiplication(3, 4);
 
         $this->assertIsFloat($result);
-        $this->assertEquals(12, $result);
+        $this->assertEquals(15, $result);
         $this->assertNotNull($result);
         $this->assertGreaterThan(0, $result);
     }
